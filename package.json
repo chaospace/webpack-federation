@@ -2,12 +2,19 @@
   "name": "webpack-federation",
   "version": "1.0.0",
   "description": "",
+  "packageManager": "^pnpm@9.0.6",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20.11.0",
+    "npm": ">=10.2.4",
+    "pnpm": ">=9.0.6"
+  },
   "dependencies": {
     "@module-federation/enhanced": "^0.1.10",
     "react": "^18.3.1",
