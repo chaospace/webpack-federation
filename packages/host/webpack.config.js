@@ -6,8 +6,6 @@ const {
 const deps = require("./package.json").dependencies;
 module.exports = (_, options) => {
   const isDev = options.mode === "development";
-  console.log("isDev", isDev);
-
   return {
     entry: "./src/index.tsx",
     watch: isDev,
