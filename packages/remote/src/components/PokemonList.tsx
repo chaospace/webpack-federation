@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import { IPokemon } from "@/types/IPokemon";
-import { usePokemons, useSetPokemons, useSetSelectPokemon } from "@/store/pokemonState";
+import { IPokemon, selectPokemons, selectSetPokemons, selectSetSelect, usePokemons, useSetPokemons, useSetSelectPokemon } from "@/store/pokemonState";
 import * as styles from "./style.module.css";
+import { useStateStore } from "@/store";
 
 
 function PokemonList() {
 
-    const pokemons = usePokemons();
-    const setPokemons = useSetPokemons();
-    const setSelectedPokemon = useSetSelectPokemon();
+    const pokemons = useStateStore(selectPokemons);
+    const setPokemons = useStateStore(selectSetPokemons);// useSetPokemons();
+    const setSelectedPokemon = useStateStore(selectSetSelect); //useSetSelectPokemon();
 
     const fetchPokemons = async () => {
         const response = await fetch(
