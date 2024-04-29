@@ -1,5 +1,4 @@
-import { StateCreator, create, useStore } from "zustand";
-import { devtools } from "zustand/middleware";
+import { StateCreator } from "zustand";
 
 interface CountState {
     count: number;
@@ -19,26 +18,16 @@ const createCountSlice: StateCreator<CountState, [["zustand/devtools", never]], 
 
 
 
-const counterStore = create<CountState>()(devtools((set) => ({
-    count: 0,
-    setCount: (n: number) => set({ count: n }, undefined, COUNTER_ACTION.SET_COUNT)
-}), {
-    name: "counterStore"
-}));
-
 
 //selector
-const selectCount = (s: CountState) => s.count;
-const selectSetCount = (s: CountState) => s.setCount;
-
-const useCount = () => useStore(counterStore, selectCount);
-const useSetCount = () => useStore(counterStore, selectSetCount);
+const countSelector = (s: CountState) => s.count;
+const setCountSelector = (s: CountState) => s.setCount;
 
 
 
 export type { CountState }
 export {
-    selectCount,
-    selectSetCount
+    countSelector,
+    setCountSelector
 }
-export { createCountSlice, counterStore, useCount, useSetCount };
+export { createCountSlice };

@@ -1,2 +1,2 @@
 declare module "remote/PokemonList";
-declare module "remote/PokemonState";
+declare module "remote/Store";

@@ -65,7 +65,7 @@ module.exports = (_, options) => {
         filename: "remoteEntry.js",
         exposes: {
           "./PokemonList": "./src/components/PokemonList",
-          "./PokemonState": "./src/store/pokemonState",
+          "./Store": "./src/store/index",
         },
         shared: {
           react: { singleton: true },

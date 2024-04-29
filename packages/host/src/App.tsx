@@ -1,12 +1,12 @@
 import React, { Suspense } from "react";
 import PokemonList from "remote/PokemonList";
-import { useSelectedPokemon } from "remote/PokemonState";
+import { useSelectPokemon } from "remote/Store";
 import "./App.css";
 
 function App() {
 
     //선택된 포켓몬 참조 가져오기
-    const selected = useSelectedPokemon();
+    const selected = useSelectPokemon();
     return (
         <React.Fragment>
             <h3 style={ { color: "#1e3a8a", fontSize: "20px" } }>Create using Vite + vite-plugin-federation</h3>

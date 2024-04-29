@@ -1,12 +1,11 @@
 import React from "react";
-import { selectCount, selectSetCount, useCount, useSetCount } from "@/store/countState";
-import { useStateStore } from "@/store";
+import { useCount, useSetCount } from "@/store";
 
 
 function Counter() {
 
-    const count = useStateStore(selectCount);//useCount();
-    const setCount = useStateStore(selectSetCount); //useSetCount();
+    const count = useCount();
+    const setCount = useSetCount();
 
     return (
         <div>
