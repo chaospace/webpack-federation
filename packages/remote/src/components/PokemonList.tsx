@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { IPokemon } from "@/store/pokemonState";
 import * as styles from "./style.module.css";
-import { usePokemons, useSetPokemons, useSetSelectPokemon } from "@/store";
+import { usePokemons, useSelectPokemon, useSetPokemons, useSetSelectPokemon } from "@/store";
 
 
 function PokemonList() {
@@ -9,14 +9,21 @@ function PokemonList() {
     const pokemons = usePokemons();
     const setPokemons = useSetPokemons();
     const setSelectedPokemon = useSetSelectPokemon();
+    const selected = useSelectPokemon();
 
     const fetchPokemons = async () => {
-        const response = await fetch(
-            "https://raw.githubusercontent.com/kevinuehara/microfrontends/main/mocks/pokemonList.json"
-        );
+        const response = await fetch("/pokemons");
         const jsonData = await response.json();
         setPokemons(jsonData as IPokemon[]);
     }
+
+    useMemo(async () => {
+        if (selected) {
+            const response = await fetch(`/pokemons/${selected?.id}`);
+            const jsonData = await response.json();
+            console.log('detail', jsonData);
+        }
+    }, [selected]);
 
     useEffect(() => {
         fetchPokemons();
