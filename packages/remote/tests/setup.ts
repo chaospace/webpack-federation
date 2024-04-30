@@ -2,6 +2,20 @@ import "@testing-library/react/dont-cleanup-after-each";
 import "@testing-library/dom";
 import "@testing-library/react";
 import { cleanup } from "@testing-library/react";
+import { server } from "@/mocks/node";
 
-//개별 테스트 후 cleanup실행
-afterEach(cleanup)
+
+beforeAll(() => {
+    server.listen();
+});
+
+afterEach(() => {
+    server.resetHandlers();
+    cleanup();
+});
+
+afterAll(() => {
+    server.close();
+})
+
+
