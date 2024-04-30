@@ -11,6 +11,9 @@ importers:
       '@module-federation/enhanced':
         specifier: ^0.1.10
         version: 0.1.10(typescript@5.4.5)(vue-tsc@1.8.27(typescript@5.4.5))(webpack@5.91.0)
+      axios:
+        specifier: ^1.6.8
+        version: 1.6.8
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -26,6 +29,9 @@ importers:
       '@module-federation/enhanced':
         specifier: ^0.1.10
         version: 0.1.10(typescript@5.4.5)(vue-tsc@1.8.27(typescript@5.4.5))(webpack@5.91.0(webpack-cli@5.1.4))
+      axios:
+        specifier: ^1.6.8
+        version: 1.6.8
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -84,6 +90,9 @@ importers:
       '@module-federation/enhanced':
         specifier: ^0.1.10
         version: 0.1.10(typescript@5.4.5)(vue-tsc@1.8.27(typescript@5.4.5))(webpack@5.91.0(webpack-cli@5.1.4))
+      axios:
+        specifier: ^1.6.8
+        version: 1.6.8
       react:
         specifier: ^18.3.1
         version: 18.3.1
