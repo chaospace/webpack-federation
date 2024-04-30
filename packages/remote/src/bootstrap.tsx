@@ -5,7 +5,7 @@ import Counter from "./components/Counter";
 
 const prepareRender = async () => {
     if (process.env.mode === "development") {
-        const { worker } = await import("./server/worker");
+        const { worker } = await import("./mocks/browser");
         return worker.start({
             serviceWorker: {
                 url: "/mockServiceWorker.js"
